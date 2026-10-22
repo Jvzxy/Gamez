@@ -1,0 +1,67 @@
+.room__title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.room__stack {
+  display: grid;
+  gap: 22px;
+  max-width: 880px;
+}
+
+.room__danger {
+  border-color: rgba(255, 79, 129, 0.35);
+}
+
+.room__danger-body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.members__tools {
+  padding-bottom: 6px;
+}
+
+.members {
+  display: grid;
+}
+
+.members__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+  padding: 10px 20px;
+  border-top: 1px solid var(--line);
+}
+
+.members__row .player-chip {
+  flex: 1 1 200px;
+  min-width: 0;
+}
+
+.members__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.members__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+}
+
+.members__ban:hover {
+  color: var(--live-ink);
+}
+
+.members__banned-head {
+  border-top: 1px solid var(--line);
+}

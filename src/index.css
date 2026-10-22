@@ -1,0 +1,188 @@
+/* gamez: design tokens and base styles.
+   Dark by design. Two "paddle" colours carry the interface: tangerine for
+   actions and "you", sky for the opponent and information. Every game also
+   brings its own hue (set per element through --hue). */
+
+:root {
+  color-scheme: dark;
+
+  /* Surfaces: a blue-violet midnight, stepped lighter as things rise. */
+  --bg: #0b0c1a;
+  --bg-sunk: #080914;
+  --panel: #12142a;
+  --panel-2: #1a1d38;
+  --panel-3: #242848;
+  --panel-4: #2f3459;
+  --line: rgba(168, 172, 255, 0.12);
+  --line-strong: rgba(168, 172, 255, 0.26);
+
+  /* Ink */
+  --ink: #f1efff;
+  --ink-2: #a9acd0;
+  --ink-3: #8087b0;
+
+  /* Brand pair */
+  --p1: #ff8a3d;
+  --p1-hover: #ff9c58;
+  --p1-ink: #1d0f04;
+  --p1-soft: rgba(255, 138, 61, 0.15);
+  --p2: #5bc0ff;
+  --p2-ink: #04131f;
+  --p2-soft: rgba(91, 192, 255, 0.15);
+
+  /* Semantic */
+  --live: #ff4f81;
+  --live-soft: rgba(255, 79, 129, 0.16);
+  --live-ink: #ff94b2;
+  --ok: #44e0a4;
+  --ok-soft: rgba(68, 224, 164, 0.15);
+  --gold: #ffcf5a;
+  --gold-soft: rgba(255, 207, 90, 0.15);
+  --silver: #c7cbe6;
+  --bronze: #e29a6a;
+
+  /* Presence */
+  --presence-online: #44e0a4;
+  --presence-in-game: #5bc0ff;
+  --presence-away: #ffcf5a;
+  --presence-offline: #4d5280;
+
+  /* Shape and motion */
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 20px;
+  --r-xl: 26px;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  /* Layout */
+  --sidebar-w: 232px;
+  --topbar-h: 56px;
+
+  /* Type */
+  --font-body: 'Hanken Grotesk', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Unbounded', 'Hanken Grotesk', system-ui, 'Segoe UI', sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', 'Cascadia Mono', Consolas, monospace;
+
+  font: 400 15px/1.5 var(--font-body);
+  color: var(--ink);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  background:
+    radial-gradient(900px 520px at 8% -8%, rgba(255, 138, 61, 0.07), transparent 62%),
+    radial-gradient(900px 560px at 100% 0%, rgba(91, 192, 255, 0.07), transparent 58%),
+    var(--bg);
+  background-attachment: fixed;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+figure {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  padding: 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+svg {
+  flex: none;
+}
+
+code,
+kbd {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--p2);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--p1);
+  color: var(--p1-ink);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--panel-4) transparent;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
